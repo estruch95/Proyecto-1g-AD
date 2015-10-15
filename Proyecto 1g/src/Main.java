@@ -22,10 +22,9 @@ public class Main {
 		//OPCIONES DISPONIBLES SOBRE EL OBJETO LIBRO:
 		//GUARDAR (Ejemplos)
 		almLibros.guardarLibro(libro3, "libro3Guardado.txt");
-		almLibros.guardarLibro(libro1, "libro3Guardado.txt");
 		
 		//RECUPERAR
-		almLibros.recuperarLibro("libro3Guardado.txt");
+		Libro libroRecuperado = almLibros.recuperarLibro("libro3Guardado.txt");
 		
 		//GUARDAR LISTAS DE LIBROS 
 		//GENERAMOS LISTA (ArrayList<Libro>)
@@ -35,10 +34,14 @@ public class Main {
 		listaDeLibros.add(libro3);
 		
 		almLibros.guardarLista(listaDeLibros, "listaLibros.txt");
-		
+
 		//MODIFICACIÓN DE TÍTULO Y/O AUTOR
-		libro1.setTitulo("Nuevo titulo");
-		libro1.setAutor("Nuevo autor");
+		libroRecuperado.setTitulo("Nuevo titulo");
+		libroRecuperado.setAutor("Nuevo autor");
+		
+		//COMPROBACIÓN
+		System.out.println(libroRecuperado.getTitulo());
+		System.out.println(libroRecuperado.getAutor());
 		
 		/*Si queremos guardar un conjunto de libros en un mismo fichero de salida uilizaremos guardarLista(),
 		en cambio si deseamos guardar un libro en un fichero individual o separado utilizaremos guardarLibro()*/
